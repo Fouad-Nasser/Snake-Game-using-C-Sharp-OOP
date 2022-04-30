@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Snake_Game_using_C_Sharp_OOP</RootNamespace>
+  </PropertyGroup>
+
+</Project>
