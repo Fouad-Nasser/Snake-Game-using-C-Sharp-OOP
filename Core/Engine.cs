@@ -53,5 +53,19 @@ namespace Snake.Core
                     break;
             }
         }
+
+        public void ShowMenu()
+        {
+            Menu m;
+            List<string> items;
+            items = new List<string>();
+            items.Add("Opend Border");
+            items.Add("Closed Border");
+            items.Add("Exit");
+
+            m = new Menu(items, ConsoleColor.DarkCyan, ConsoleColor.White,2,10);
+            m.PressEnter += m_PressEnter;
+            m.show();
+        }
     }
 }
