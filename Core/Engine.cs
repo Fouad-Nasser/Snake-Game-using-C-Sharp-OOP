@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading;
+using Objects.Menu;
 using System.Collections.Generic;
 using System.Drawing;
 
@@ -33,6 +34,24 @@ namespace Snake.Core
             this.isGameOver = false;
         }
 
-
+        private void m_PressEnter(object sender,MenuEvenrArgs e)
+        {
+            switch (e.Current)
+            {
+                case 0:
+                    e.IsChoice = true;
+                    Console.Clear();
+                    snake.GameType = "Opend Border";
+                    break;
+                case 1:
+                    e.IsChoice = true;
+                    Console.Clear();
+                    snake.GameType = "Closed Border";
+                    break;
+                case 2:
+                    System.Environment.Exit(-1);
+                    break;
+            }
+        }
     }
 }
