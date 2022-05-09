@@ -67,5 +67,52 @@ namespace Snake.Core
             m.PressEnter += m_PressEnter;
             m.show();
         }
+
+        private void CheckKey()
+        {
+            while (Console.KeyAvailable)
+            {
+                var key = Console.ReadKey(true);
+                switch (key.Key)
+                {
+                    case ConsoleKey.UpArrow:
+                    case ConsoleKey.W:
+                        if ((this.snake.Direction == Direction.Left) || (this.snake.Direction == Direction.Right))
+                        {
+                            this.snake.Direction = Direction.Up;
+                        }
+
+                        return;
+                    case ConsoleKey.DownArrow:
+                    case ConsoleKey.S:
+                        if ((this.snake.Direction == Direction.Left) || (this.snake.Direction == Direction.Right))
+                        {
+                            this.snake.Direction = Direction.Down;
+                        }
+
+                        return;
+                    case ConsoleKey.LeftArrow:
+                    case ConsoleKey.A:
+                        if ((this.snake.Direction == Direction.Up) || (this.snake.Direction == Direction.Down))
+                        {
+                            this.snake.Direction = Direction.Left;
+                        }
+
+                        return;
+                    case ConsoleKey.RightArrow:
+                    case ConsoleKey.D:
+                        if ((this.snake.Direction == Direction.Up) || (this.snake.Direction == Direction.Down))
+                        {
+                            this.snake.Direction = Direction.Right;
+                        }
+                        return;
+                    case ConsoleKey.P:
+                       playground.PrintMsg("press any key to continue...");
+                        Console.ReadKey();
+                       playground.PrintMsg("Press p to pause              ");
+                       return;
+                }
+            }
+        }
     }
 }
