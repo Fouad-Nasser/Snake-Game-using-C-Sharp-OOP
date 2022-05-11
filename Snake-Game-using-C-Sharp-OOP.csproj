@@ -6,4 +6,8 @@
     <RootNamespace>Snake_Game_using_C_Sharp_OOP</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+      <PackageReference Include="Colorful.Console" Version="1.2.15" />
+  </ItemGroup>
+
 </Project>

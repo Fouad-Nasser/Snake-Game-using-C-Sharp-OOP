@@ -37,5 +37,19 @@ namespace Snake.Core
                     break;
             }
         }
+
+         public static void Exit(int score)
+        {
+            int prev =  int.Parse(File.ReadAllText(@".\Record.txt"));
+            if (score>prev)
+            {
+                File.WriteAllText(@".\Record.txt",Convert.ToString(score));
+            }
+            Console.Clear();
+            Utilites.ConsoleDefaultColors();
+            Console.SetCursorPosition(2,0);
+            Colorful.Console.WriteAscii("Game Over", Color.FromArgb(0,255,255));
+            ShowMenu();
+        }
     }
 }
