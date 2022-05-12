@@ -143,6 +143,16 @@ namespace Snake.Core
             EndGame.Exit(snake.Score);
         }
 
-        
+         public static void StartGame(int PlaygroundBorderLeft, int PlaygroundBorderRight,
+                              int PlaygroundBorderUp, int PlaygroundBorderDown){
+            Console.SetWindowSize(80, 50);
+            Colorful.Console.WriteAscii("Snake Game", Color.FromArgb(0,255,255));
+            Engine e = new Engine(PlaygroundBorderLeft, PlaygroundBorderRight,
+                                    PlaygroundBorderUp, PlaygroundBorderDown);
+            e.ShowMenu();
+            e.Run();
+        }
+
+
     }
 }
