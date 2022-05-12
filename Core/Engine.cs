@@ -114,5 +114,35 @@ namespace Snake.Core
                 }
             }
         }
+
+         public void Run()
+        {
+            this.playground.Paint();
+            this.food.Paint();
+            while (!this.isGameOver)
+            {
+                this.CheckKey();
+                this.snake.Move();
+                this.snake.CheckBiteItself(ref this.isGameOver);
+                
+                if (snake.GameType == "Closed Border")
+                {
+                    this.snake.CheckBiteBorder(ref this.isGameOver);
+                }
+
+                if (this.snake.CheckEatFood(this.food))
+                {
+                    this.food.Paint();
+                    Console.ForegroundColor = ConsoleColor.Cyan;
+                    Console.SetCursorPosition(playground.LeftBorder, playground.UpBorder - 2);
+                    Console.Write($"Score: {snake.Score}");
+                }
+                Thread.Sleep(this.snake.Interval);
+            }
+
+            EndGame.Exit(snake.Score);
+        }
+
+        
     }
 }
