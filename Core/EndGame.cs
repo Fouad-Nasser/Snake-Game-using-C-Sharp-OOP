@@ -40,10 +40,10 @@ namespace Snake.Core
 
          public static void Exit(int score)
         {
-            int prev =  int.Parse(File.ReadAllText(@".\Record.txt"));
+            int prev =  int.Parse(File.ReadAllText(@"..\..\..\record.txt"));
             if (score>prev)
             {
-                File.WriteAllText(@".\Record.txt",Convert.ToString(score));
+                File.WriteAllText(@"..\..\..\record.txt",Convert.ToString(score));
             }
             Console.Clear();
             Utilites.ConsoleDefaultColors();

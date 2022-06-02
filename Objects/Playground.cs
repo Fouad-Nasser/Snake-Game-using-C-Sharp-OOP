@@ -7,7 +7,7 @@ namespace Snake.Objects
     public class Playground : IPaintable
     {
         private const char BorderCharacter = ' ';
-        private string record = File.ReadAllText(@".\Record.txt");
+        private string record = File.ReadAllText(@"..\..\..\record.txt");
         private const ConsoleColor scoreColor = ConsoleColor.Cyan;
         private const ConsoleColor BorderColor = ConsoleColor.DarkCyan;
         private readonly int leftBorder;
